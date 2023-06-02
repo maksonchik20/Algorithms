@@ -11,4 +11,4 @@ def find(x, array, n):
     # print(l)
     # return l < n and array[l] == x
 
-print(find(7, [1,2,3,4,5,6,7,8,9,10], 9))
+find(7, [1,2,3,4,5,6,7,8,9,10], 11)

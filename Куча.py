@@ -36,7 +36,6 @@ class Queue:
         self.queue[1], self.queue[-1] = self.queue[-1], self.queue[1]
         self.queue.pop()
         self.sift_down(1)
-
 queue = Queue()
 queue.add_element(5)
 queue.add_element(8)
