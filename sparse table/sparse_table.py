@@ -17,3 +17,22 @@ r = 1
 l = 4
 pow = log[r-l + 1]
 print(min(sparse[l])[pow], sparse[r - 2**pow + 1])
+
+
+# int main() {
+#   int n;
+#   std::cin >> n;
+#   std::vector<std::vector<int>>table(n, std::vector<int>(log2(n)));
+#   for (int i = 0; i < n; ++i) {
+#     std::cin >> table[i][0];
+#   }
+#   //(1 << h)
+#   //2 ^ k = (1 << k);
+#   //(n << m)// 101000 -> 10100000
+#   //n >> m//1010
+#   for (int j = 1; j < log2(n); ++j) {
+#     for (int i = 0; i < n - (1 << j); ++i) {
+#       table[i][j] = max(table[i][j -1], table[i + (1 << (j - 1)) + 1][j-1]);
+#     }
+#   }
+# }
