@@ -19,13 +19,17 @@ void add(int x, int y, int delta) {
 			tree[i][j] += delta;
 }
 
+int sum(int x1, int y1, int x2, int y2) {
+    return sum(x2, y2) - sum(x2, y1-1) - sum(x1-1, y2) + sum(x1-1, y1-1);
+}
+
 int main() {
     ios_base::sync_with_stdio(false);
     cin.tie(nullptr);
     cout.tie(nullptr);
     cin >> n >> m;
     ++n;
-    ++m;
+    // ++m;
     a.resize(n, vector<int> (m));
     tree.resize(n, vector<int> (m));
     for (int i = 0; i < n; ++i) {
@@ -33,18 +37,22 @@ int main() {
             a[i][j] = 0;
          }
     }
-    int q, x, y, x1, x2, y1, y2;
-    cin >> q;
-    string query;
-    for (int i = 0; i < q; ++i) {
-        cin >> query;
-        if (query == "add") {
-            cin >> x >> y;
-            add(x, y, 1);
-        } else {
-            cin >> x1 >> y1 >> x2 >> y2;
-            cout << sum(x2, y2) - sum(x2, y1-1) - sum(x1-1, y2) + sum(x1-1, y1-1) << endl;
+    long long res = 0;
+    // int q, x, y, x1, x2, y1, y2;
+    for (int i = 0; i < m; ++i) {
+        vector<int> pos(n + 1);
+        for (int j = 1; j < n; ++j) {
+            int num;
+            cin >> num;
+            pos[num] = j;
+        }
+        for (int j = n - 1; j >= 1; --j) {
+            // cout << pos[j] << " " << sum(0, i, pos[j] - 1, i) << endl;
+            res += sum(0, i, pos[j] - 1, i);
+            add(pos[j], i, 1);
+            // cout << res << endl;
         }
     }
+    cout << res;
     return 0;
 }

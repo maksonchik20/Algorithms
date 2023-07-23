@@ -112,15 +112,9 @@ int main() {
         cin >> type >> index;
         if (type == 1) {
             t = delete_item(t, index);
-            // print(t);
-            // cout << endl;
         } else {
             int result = get_index(t, index);
             cout << result << endl;
-            // print(t);
-            // cout << endl;
         }
     }
-    // print(t);
-    // cout << endl;
 }
