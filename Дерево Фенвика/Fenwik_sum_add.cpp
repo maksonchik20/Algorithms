@@ -3,6 +3,9 @@
 using namespace std;
 
 struct Fenwik {
+    // fw.add(i, x) - присвоить i - x.
+    // fw.sum(i) - взять сумму на префиксе до i
+    // 1 индексация
     int n;
     vector<long long> tree;
 
@@ -33,9 +36,6 @@ int main() {
     for (int i = 0, x; i < n; i++) {
         fw.add(i, 0);
     }
-    // fw.add(i, x) - присвоить i - x.
-    // fw.sum(i) - взять сумму на префиксе до i
-    // 1 индексация
     while (q --> 0) {
         string t;
         cin >> t;

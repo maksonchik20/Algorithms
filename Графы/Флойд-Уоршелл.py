@@ -7,7 +7,7 @@ W = [[inf] * n for _ in range(n)]
 for _ in range(m):
     _from, to, w = map(int, input().split())
     W[_from][to] = w
-    W[to][_from] = w
+    # W[to][_from] = w
 A = [[W[i][j] for j in range(n)] for i in range(n)] 
 Prev = [[None for j in range(n)] for i in range(n)] 
 for k in range(n):
@@ -20,7 +20,7 @@ print(A)
 print(Prev)
 Path = []
 i = 0
-j = 5
+j = 3
 while j is not None: 
     Path.append(j) 
     j = Prev[i][j] 
